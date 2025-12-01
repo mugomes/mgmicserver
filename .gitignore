@@ -1,0 +1,15 @@
+# packages
+packages/
+
+# client
+client/build/
+client/config.json
+client/error_log
+
+# server
+server/build/
+server/config.json
+server/error_log
+
+# compile
+compile.sh

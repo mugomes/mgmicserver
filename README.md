@@ -1,7 +1,7 @@
 # MGMicServer
 
-Com MGMicServer você pode usar o microfone do seu computador principal e enviar 
-o áudio sem ruído e chiados para o seu computador secundário.
+Com MGMicServer você pode usar o microfone do seu computador principal (servidor) e enviar 
+o áudio sem ruído e chiados para o seu computador secundário (cliente).
 
 ## Download
 
@@ -18,10 +18,10 @@ Baixe a versão mais recente disponível nos
 ## Documentação
 
 No seu computador que contém o microfone baixe a versão MGMicServer e no 
-computador que irá receber o som do servidor baixe a versão MGMicServer-Client
+computador que irá receber o som do servidor baixe a versão MGMicServer-Client.
 
 Abra o terminal e aplique permissão de execução para os dois executáveis, 
-tanto no servidor quanto no cliente
+tanto no servidor quanto no cliente.
 
 ```bash
 chmod +x mgmicserver
