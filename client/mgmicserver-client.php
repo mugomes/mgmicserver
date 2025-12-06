@@ -13,6 +13,7 @@ if (!file_exists(__DIR__ . '/config.json')) {
     file_put_contents(__DIR__ . '/config.json', json_encode([
         'hostname' => '',
         'port' => '5000',
+        'inputMicrophone' => false,
         'showError' => false
     ], JSON_PRETTY_PRINT));
     die('Adicione o nome da sua máquina (servidor) no arquivo config.json gerado!' . PHP_EOL);
@@ -51,6 +52,10 @@ if (!$server) {
 echo 'Criando sink virtual PulseAudio...' . PHP_EOL;
 exec('pactl unload-module module-null-sink 2>/dev/null');
 exec('pactl load-module module-null-sink sink_name=MGNetworkAudio sink_properties=device.description=MGNetwork_Audio');
+
+if (!empty($config['inputMicrophone'])) {
+    exec('pactl load-module module-virtual-source source_name=MGNetworkMic master=MGNetworkAudio.monitor source_properties="device.description=MGNetwork_Microphone"');
+}
 
 sleep(1);
 
@@ -127,6 +132,10 @@ proc_close($process);
 socket_close($sock);
 
 exec('pactl unload-module module-null-sink 2>/dev/null');
+
+if (!empty($config['inputMicrophone'])) {
+    exec('pactl unload-module "$(pactl list short modules | grep MGNetworkMic | awk \'{print $1}\')" 2>/dev/null');
+}
 
 // Restaura o terminal
 shell_exec('stty sane');
