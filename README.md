@@ -3,6 +3,12 @@
 Com MGMicServer você pode usar o microfone do seu computador principal (servidor) e enviar 
 o áudio sem ruído e chiados para o seu computador secundário (cliente).
 
+## Entrada e Saída de Áudio
+
+A partir da versão 1.1.0 você pode escolher se deseja ter um microfone de entrada ou apenas o som de saída.
+
+O Microfone Virtual lhe permitirá utilizar o áudio também em aplicativos como Google Meet, Discord, entre outros.
+
 ## Download
 
 Baixe a versão mais recente disponível nos 
@@ -37,6 +43,30 @@ exemplo "seu-pc". Não use ".local" no final, pois isso já foi configurado.
 
 Você também pode alterar a porta no arquivo config.json ou deixar a porta que 
 está como padrão, caso altere, lembre-se de alterar também no lado do servidor.
+
+### Configurações
+
+Caso queira criar o arquivo json manualmente, veja o padrão abaixo:
+
+**Servidor**
+
+```json
+{
+    "port": "5000",
+    "showError": false
+}
+```
+
+**Cliente**
+
+```json
+{
+    "hostname": "nomedoseucomputador",
+    "port": "5000",
+    "inputMicrophone": false,
+    "showError": false
+}
+```
 
 ## Support
 
