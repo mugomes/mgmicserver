@@ -68,6 +68,10 @@ Caso queira criar o arquivo json manualmente, veja o padrão abaixo:
 }
 ```
 
+### Firewall
+
+Caso esteja com o Firewall ativado em seu servidor é necessário liberar a entrada para a porta 5000/tcp.
+
 ## Support
 
 - GitHub: https://github.com/sponsors/mugomes/
