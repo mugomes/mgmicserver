@@ -71,7 +71,7 @@ Caso queira criar o arquivo json manualmente, veja o padrão abaixo:
 ## Support
 
 - GitHub: https://github.com/sponsors/mugomes/
-- More: https://mugomes.github.io/apoie.html
+- More: https://www.mugomes.com.br/apoie.html
 
 ## License
 
